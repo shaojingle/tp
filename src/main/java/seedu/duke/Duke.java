@@ -20,16 +20,7 @@ public class Duke {
     public Duke() {
         ui = new Ui();
         ui.greetUser();
-
-        /* storage = new Storage(filePath);
-        try {
-            stocks = new StockList(storage.load());
-            stocks.viewPortfolio();
-        } catch (DukeException e) {
-            ui.showLoadingError(e.getMessage());
-            stocks = new StockList();
-        }
-         */
+        
         stocks = new StockList();
     }
 
