@@ -37,7 +37,7 @@ public class Api {
 
         // Prints response from API call
         String response = FullResponseBuilder.getFullResponse(http);
-        System.out.println(response);
+        // System.out.println(response);
 
     }
 
