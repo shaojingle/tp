@@ -20,6 +20,7 @@ public class Duke {
     public Duke() {
         ui = new Ui();
         ui.greetUser();
+
 //        storage = new Storage(filePath);
 //        try {
 //            stocks = new StockList(storage.load());
