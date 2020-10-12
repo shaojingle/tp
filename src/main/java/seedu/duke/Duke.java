@@ -20,12 +20,12 @@ public class Duke {
     public Duke() {
         ui = new Ui();
         ui.greetUser();
-        
+
         stocks = new StockList();
     }
 
     /**
-     * Runs Duke program
+     * Runs Duke program.
      */
     public void run() {
         boolean isBye = false;
