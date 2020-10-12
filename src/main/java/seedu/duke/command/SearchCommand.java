@@ -10,6 +10,6 @@ public class SearchCommand extends Command {
     @Override
     public void executeCommand(String userInput, StockList stocks) throws DukeException {
         String symbol = Parser.getSearch(userInput);
-//        Api.quoteStock(symbol);
+
     }
 }

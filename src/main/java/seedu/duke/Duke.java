@@ -14,21 +14,22 @@ import java.util.concurrent.TimeUnit;
 public class Duke {
 
     public final Ui ui;
-//    private final Storage storage;
+    // private final Storage storage;
     private StockList stocks;
 
     public Duke() {
         ui = new Ui();
         ui.greetUser();
 
-//        storage = new Storage(filePath);
-//        try {
-//            stocks = new StockList(storage.load());
-//            stocks.viewPortfolio();
-//        } catch (DukeException e) {
-//            ui.showLoadingError(e.getMessage());
-//            stocks = new StockList();
-//        }
+        /* storage = new Storage(filePath);
+        try {
+            stocks = new StockList(storage.load());
+            stocks.viewPortfolio();
+        } catch (DukeException e) {
+            ui.showLoadingError(e.getMessage());
+            stocks = new StockList();
+        }
+         */
         stocks = new StockList();
     }
 
@@ -63,7 +64,7 @@ public class Duke {
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        new Duke().run();
+        // new Duke().run();
 
 
     }

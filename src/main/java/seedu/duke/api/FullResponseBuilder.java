@@ -5,12 +5,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.HttpURLConnection;
-import java.util.Iterator;
-import java.util.List;
 
 public class FullResponseBuilder {
     public static String getFullResponse(HttpURLConnection con) throws IOException {
-        StringBuilder fullResponseBuilder = new StringBuilder();
 
         Reader streamReader = null;
         if (con.getResponseCode() > 299) {
@@ -27,6 +24,8 @@ public class FullResponseBuilder {
         }
 
         br.close();
+
+        StringBuilder fullResponseBuilder = new StringBuilder();
 
         fullResponseBuilder.append("Response: ")
                 .append(content);
