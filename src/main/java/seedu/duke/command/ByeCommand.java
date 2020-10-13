@@ -5,8 +5,4 @@ import seedu.duke.data.exception.DukeException;
 
 public class ByeCommand extends Command {
 
-    @Override
-    public void executeCommand(String userInput, StockList stocks) throws DukeException {
-
-    }
 }
