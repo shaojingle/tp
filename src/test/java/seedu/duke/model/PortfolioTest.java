@@ -15,8 +15,7 @@ class PortfolioTest {
         String symbol = "abcdefg";
         int quantity = 1;
         // Use a lambda
-        assertThrows(DukeException.class, () ->
-        {
+        assertThrows(DukeException.class, () -> {
             portfolio.sellStock(symbol, quantity, stockPriceFetcher.fetchLatestPrice(symbol));
         });
     }
@@ -30,8 +29,7 @@ class PortfolioTest {
         int sellQuantity = 2;
 
         // Use a lambda
-        assertThrows(DukeException.class, () ->
-        {
+        assertThrows(DukeException.class, () -> {
             // buy 1 aapl stock
             portfolio.buyStock(symbol, buyQuantity, stockPriceFetcher.fetchLatestPrice(symbol));
             // attempt to sell 2 aapl stock
