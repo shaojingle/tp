@@ -38,6 +38,20 @@ Example of usage:
 `sell /goog`
 
 `sell /amzn`
+
+### Searching for info about a stock: `search /aapl`
+Shows information about a stock like price and volume
+
+Format: `search /STOCK_TICKER`
+
+* The `STOCK_TICKER` is the stock's short form
+
+Example of usage: 
+
+`search /nflx`
+
+`search /shop`
+
 ## FAQ
 
 **Q**: How do I transfer my data to another computer? 
