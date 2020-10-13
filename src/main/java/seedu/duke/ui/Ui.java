@@ -48,6 +48,7 @@ public class Ui {
                 print("\t" + t.toString());
             }
         }
+        print(dividerLine);
     }
 
     public void printStocks(ArrayList<Stock> stocks) {
@@ -58,14 +59,4 @@ public class Ui {
         printWithDivider(stockNames);
     }
 
-    public void showErrorMessage(String message) {
-        System.out.println(message);
-    }
-
-    public boolean sayBye(String userInput) {
-        if (userInput.contains("bye")) {
-            return true;
-        }
-        return false;
-    }
 }

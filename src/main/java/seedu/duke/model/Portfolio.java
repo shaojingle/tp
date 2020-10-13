@@ -30,6 +30,8 @@ public class Portfolio implements Serializable {
     public void sellStock(String symbol, int quantity, double sellPrice) throws DukeException {
         if (stocks.get(symbol) == null) {
             throw new DukeException("You do not own this stock!");
+        } else if (stocks.get(symbol).getTotalQuantity() < quantity) {
+            throw new DukeException("You only own " + stocks.get(symbol).getTotalQuantity() + " of this stock!");
         }
 
         Transaction transaction = new Transaction(TransactionType.SELL, quantity, sellPrice, LocalDateTime.now());

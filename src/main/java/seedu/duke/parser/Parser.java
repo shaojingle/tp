@@ -25,6 +25,12 @@ public class Parser {
             } catch (DukeException e) {
                 return new InvalidCommand(e.getMessage());
             }
+        case "sell":
+            try {
+                return parseSell(userInputSplit);
+            } catch (DukeException e) {
+                return new InvalidCommand(e.getMessage());
+            }
         case "bye":
             return new ByeCommand();
         case "view":
@@ -47,6 +53,22 @@ public class Parser {
             throw new DukeException(("Please enter the ticker symbol of the company that you want to buy!"));
         } catch (NumberFormatException e) {
             throw new DukeException("Please enter a valid integer for the quantity of stocks that you want to buy!");
+        }
+    }
+
+    public static Command parseSell(String[] userInputSplit) throws DukeException {
+        try {
+            if (!userInputSplit[1].startsWith("/")) {
+                throw new DukeException("Please enter the ticker symbol of the company that you want to buy!");
+            }
+            int quantity = Integer.parseInt(userInputSplit[2]);
+            String symbol = userInputSplit[1].substring(1);
+            SellCommand sellCommand = new SellCommand(symbol, quantity);
+            return sellCommand;
+        } catch (IndexOutOfBoundsException e) {
+            throw new DukeException("Please enter a valid integer for the quantity of stocks that you want to sell!");
+        } catch (NumberFormatException e) {
+            throw new DukeException("Please enter a valid integer for the quantity of stocks that you want to sell!");
         }
     }
 
