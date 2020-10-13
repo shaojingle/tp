@@ -2,13 +2,20 @@ package seedu.duke.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Stock implements Serializable {
-    LocalDateTime purchasedDateTime;
-    double purchasedPrice;
+    private String symbol;
+    private int totalQuantity;
+    private ArrayList<Transaction> transactions;
 
-    public Stock(double purchasedPrice, LocalDateTime purchasedDateTime) {
-        this.purchasedPrice = purchasedPrice;
-        this.purchasedDateTime = purchasedDateTime;
+    public Stock(String symbol, int totalQuantity) {
+        this.symbol = symbol;
+        this.totalQuantity = totalQuantity;
     }
+
+    public void addTransaction() {
+
+    }
+
 }
