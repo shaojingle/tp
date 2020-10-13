@@ -9,13 +9,38 @@ public class Stock implements Serializable {
     private int totalQuantity;
     private ArrayList<Transaction> transactions;
 
-    public Stock(String symbol, int totalQuantity) {
+    public Stock(String symbol) {
         this.symbol = symbol;
-        this.totalQuantity = totalQuantity;
+        transactions = new ArrayList<>();
     }
 
-    public void addTransaction() {
+    public void addTransaction(Transaction transaction) {
+        switch (transaction.getTransactionType()) {
+        case BUY:
+            totalQuantity += transaction.getQuantity();
+            break;
+        case SELL:
+            totalQuantity -= transaction.getQuantity();
+            break;
+        }
 
+        transactions.add(transaction);
     }
 
+    public ArrayList<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public int getTotalQuantity() {
+        return totalQuantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Symbol: " + getSymbol() + ", total quantity: " + getTotalQuantity();
+    }
 }
