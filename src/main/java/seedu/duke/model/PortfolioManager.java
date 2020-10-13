@@ -1,6 +1,8 @@
 package seedu.duke.model;
 
 
+import java.util.ArrayList;
+
 public class PortfolioManager {
     private Portfolio portfolio;
 
@@ -10,5 +12,12 @@ public class PortfolioManager {
         portfolio = new Portfolio();
     }
 
+    public void buyStock(String symbol, int quantity, double buyPrice) {
+        portfolio.buyStock(symbol, quantity, buyPrice);
+    }
+
+    public ArrayList<Stock> getAllStocks() {
+        return portfolio.getAllStocks();
+    }
 
 }

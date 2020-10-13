@@ -2,6 +2,7 @@ package seedu.duke.ui;
 
 import seedu.duke.model.Portfolio;
 import seedu.duke.model.Stock;
+import seedu.duke.model.Transaction;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -39,11 +40,22 @@ public class Ui {
         return userInput;
     }
 
-    public void viewPortfolio(ArrayList<Stock> stocks) {
-        String[] stockNames
-        for (Stock stock : stocks) {
-            print(stock.toString());
+    public void view(ArrayList<Stock> stocks) {
+        print(dividerLine);
+        for (int i = 0; i < stocks.size(); i++) {
+            print((i+1) + ". " + stocks.get(i).toString());
+            for (Transaction t: stocks.get(i).getTransactions()) {
+                print("\t" + t.toString());
+            }
         }
+    }
+
+    public void printStocks(ArrayList<Stock> stocks) {
+        String[] stockNames = new String[stocks.size()];
+        for (int i = 0; i < stocks.size(); i++) {
+            stockNames[i] = (i+1) + ". " + stocks.get(i).toString();
+        }
+        printWithDivider(stockNames);
     }
 
     public void showErrorMessage(String message) {

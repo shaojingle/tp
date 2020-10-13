@@ -1,6 +1,9 @@
 package seedu.duke.model;
 
+import seedu.duke.data.exception.DukeException;
+
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,11 +15,34 @@ public class Portfolio implements Serializable {
         stocks = new HashMap<>();
     }
 
-    public void addStock(Stock stock) {
-        stocks.add(stock);
+    public void buyStock(String symbol, int quantity, double buyPrice) {
+        Transaction transaction = new Transaction(TransactionType.BUY, quantity, buyPrice, LocalDateTime.now());
+        if (stocks.get(symbol) == null) {
+            Stock stock = new Stock(symbol);
+            stock.addTransaction(transaction);
+            stocks.put(symbol, stock);
+        } else {
+            Stock stock = stocks.get(symbol);
+            stock.addTransaction(transaction);
+        }
     }
 
-    public void sellStock(Stock stock) {
-        stocks.remove(stock);
+    public void sellStock(String symbol, int quantity, double sellPrice) throws DukeException {
+        if (stocks.get(symbol) == null) {
+            throw new DukeException("You do not own this stock!");
+        }
+
+        Transaction transaction = new Transaction(TransactionType.SELL, quantity, sellPrice, LocalDateTime.now());
+        Stock stock = stocks.get(symbol);
+        stock.addTransaction(transaction);
+    }
+
+    public ArrayList<Stock> getAllStocks() {
+        ArrayList<Stock> stocksArrayList = new ArrayList<>();
+        for (Stock stock: stocks.values()) {
+            stocksArrayList.add(stock);
+        }
+
+        return stocksArrayList;
     }
 }
