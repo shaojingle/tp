@@ -2,7 +2,7 @@
 
 ## Introduction
 
-{Give a product intro}
+Duke is a command line trading simulator that lets you try your hand at trading stocks with no risk!
 
 ## Quick Start
 
@@ -14,29 +14,34 @@
 ## Features 
 
 {Give detailed description of each feature}
+Buy
+Sell 
+Search
+View portfolio
 
-### Adding a todo: `todo`
-Adds a new item to the list of todo items.
+### Buying a stock: `buy /aapl`
+Buys the specified stock
 
-Format: `todo n/TODO_NAME d/DEADLINE`
+Format: `buy /STOCK_TICKER`
 
-* The `DEADLINE` can be in a natural language format.
-* The `TODO_NAME` cannot contain punctuation.  
+* The `STOCK_TICKER` is the stock's short form
 
 Example of usage: 
 
-`todo n/Write the rest of the User Guide d/next week`
+`buy /fb`
 
-`todo n/Refactor the User Guide to remove passive voice d/13/04/2020`
+`buy /tsla`
 
 ## FAQ
 
 **Q**: How do I transfer my data to another computer? 
 
-**A**: {your answer here}
+**A**: Just copy the txt file over.
 
 ## Command Summary
 
 {Give a 'cheat sheet' of commands here}
 
-* Add todo `todo n/TODO_NAME d/DEADLINE`
+* Buy a stock `buy /aapl`
+* Sell a stock `sell /aapl`
+* Search for a stock's info `search /aapl`
