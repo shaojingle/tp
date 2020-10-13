@@ -7,12 +7,15 @@ import seedu.duke.command.Command;
 import seedu.duke.command.InvalidCommand;
 import seedu.duke.command.SearchCommand;
 import seedu.duke.data.exception.DukeException;
+import seedu.duke.model.Portfolio;
+import seedu.duke.model.PortfolioManager;
 import seedu.duke.parser.Parser;
 import seedu.duke.ui.Ui;
 
 public class Controller {
     private Ui ui;
     private StockPriceFetcher stockPriceFetcher;
+    private PortfolioManager portfolioManager;
 
     public Controller() {
         ui = new Ui();
