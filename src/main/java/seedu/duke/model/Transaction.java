@@ -8,11 +8,11 @@ public class Transaction {
     private double unitPrice;
     LocalDateTime dateTimeOfTransaction;
 
-    public Transaction(TransactionType transType, int quantity, double unitPrice, LocalDateTime dateTime) {
-        this.transactionType = transType;
+    public Transaction(TransactionType transactionType, int quantity, double unitPrice, LocalDateTime dateTimeOfTransaction) {
+        this.transactionType = transactionType;
         this.quantity = quantity;
         this.unitPrice = unitPrice;
-        this.dateTimeOfTransaction = dateTime;
+        this.dateTimeOfTransaction = dateTimeOfTransaction;
     }
 
     public int getQuantity() {
