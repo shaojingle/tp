@@ -3,22 +3,33 @@ package seedu.duke.ui;
 import java.util.Scanner;
 
 public class Ui {
+    private final String dividerLine = "____________________________________________________________";
+    private final String logo = "__________                              ___________                  .___      \n"
+            + "\\______   \\_____  ______   ___________  \\__    ___/___________     __| _/____  \n"
+            + " |     ___/\\__  \\ \\____ \\_/ __ \\_  __ \\   |    |  \\_  __ \\__  \\   / __ |/ __ \\ \n"
+            + " |    |     / __ \\|  |_> >  ___/|  | \\/   |    |   |  | \\// __ \\_/ /_/ \\  ___/ \n"
+            + " |____|    (____  /   __/ \\___  >__|      |____|   |__|  (____  /\\____ |\\___  >\n"
+            + "                \\/|__|        \\/                              \\/      \\/    \\/ ";
 
-    public static void greetUser() {
-        String logo = " ____        _        \n"
-                + "|  _ \\ _   _| | _____ \n"
-                + "| | | | | | | |/ / _ \\\n"
-                + "| |_| | |_| |   <  __/\n"
-                + "|____/ \\__,_|_|\\_\\___|\n";
-        System.out.println("Hello from\n" + logo);
-        System.out.println("What is your name?");
-
-        Scanner in = new Scanner(System.in);
-        System.out.println("Hello " + in.nextLine() + "!");
+    public void greetUser() {
+        print(logo);
+        printWithDivider("Welcome to the Command Line Paper Trading App!");
     }
 
-    public static String getUserInput() {
-        System.out.println("What would you like to do?");
+    public void print(String message) {
+        System.out.println(message);
+    }
+
+    public void printWithDivider(String... messages) {
+        print(dividerLine);
+        for (String message: messages) {
+            print(message);
+        }
+        print(dividerLine);
+    }
+
+    public String getUserInput() {
+        print("What would you like to do today?");
         Scanner scan = new Scanner(System.in);
         String userInput = scan.nextLine();
         return userInput;

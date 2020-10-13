@@ -1,31 +1,44 @@
 package seedu.duke.parser;
 
+import seedu.duke.Duke;
 import seedu.duke.command.ByeCommand;
 import seedu.duke.command.Command;
+import seedu.duke.command.InvalidCommand;
 import seedu.duke.command.SearchCommand;
 import seedu.duke.data.exception.DukeException;
 
 public class Parser {
 
-    public static Command parseCommand(String userInput) throws DukeException {
-        Command command;
-        if (userInput.contains("search")) {
-            command = new SearchCommand();
-        } else if (userInput.contains("bye")) {
-            command = new ByeCommand();
-        } else {
-            throw new DukeException("Command does not exist! Try Again.");
+    public static Command parseCommand(String userInput) {
+        String[] userInputSplit = userInput.trim().split(" ");
+        String commandString = userInputSplit[0].toLowerCase();
+
+        switch (commandString) {
+        case "search":
+            try {
+                return parseSearch(userInputSplit);
+            } catch (DukeException e) {
+                return new InvalidCommand(e.getMessage());
+            }
+        case "bye":
+            return new ByeCommand();
+        default:
+            return new InvalidCommand("Invalid command! Please try again.");
         }
-        return command;
     }
 
-    public static String getSearch(String userInput) throws DukeException {
-        String symbol;
+    public static Command parseSearch(String[] userInputSplit) throws DukeException {
         try {
-            symbol = userInput.substring("search".length() + 1);
-        } catch (Exception e) {
-            throw new DukeException("Search input cannot be empty!");
+            if (!userInputSplit[1].startsWith("/")) {
+                throw new DukeException("Please enter the ticker symbol of the company!");
+            }
+        } catch (IndexOutOfBoundsException e) {
+            throw new DukeException(("Please enter the ticker symbol of the company you would like to search for!"));
         }
-        return symbol;
+
+        SearchCommand searchCommand = new SearchCommand(userInputSplit[1].substring(1));
+
+        return searchCommand;
     }
+
 }
