@@ -1,10 +1,8 @@
 package seedu.duke.parser;
 
-import seedu.duke.Duke;
 import seedu.duke.command.*;
 import seedu.duke.data.exception.DukeException;
 
-import javax.swing.text.View;
 
 public class Parser {
 
@@ -50,7 +48,7 @@ public class Parser {
             BuyCommand buyCommand = new BuyCommand(symbol, quantity);
             return buyCommand;
         } catch (IndexOutOfBoundsException e) {
-            throw new DukeException(("Please enter the ticker symbol of the company that you want to buy!"));
+            throw new DukeException(("Wrong input format! E.g. buy /MSFT 11"));
         } catch (NumberFormatException e) {
             throw new DukeException("Please enter a valid integer for the quantity of stocks that you want to buy!");
         }
@@ -66,7 +64,7 @@ public class Parser {
             SellCommand sellCommand = new SellCommand(symbol, quantity);
             return sellCommand;
         } catch (IndexOutOfBoundsException e) {
-            throw new DukeException("Please enter a valid integer for the quantity of stocks that you want to sell!");
+            throw new DukeException("Wrong input format! E.g. sell /MSFT 11");
         } catch (NumberFormatException e) {
             throw new DukeException("Please enter a valid integer for the quantity of stocks that you want to sell!");
         }

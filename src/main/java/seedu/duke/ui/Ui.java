@@ -1,6 +1,5 @@
 package seedu.duke.ui;
 
-import seedu.duke.model.Portfolio;
 import seedu.duke.model.Stock;
 import seedu.duke.model.Transaction;
 
@@ -42,6 +41,9 @@ public class Ui {
 
     public void view(ArrayList<Stock> stocks) {
         print(dividerLine);
+        if (stocks.size() == 0) {
+            print("You currently have an empty portfolio. Try buying a stock!");
+        }
         for (int i = 0; i < stocks.size(); i++) {
             print((i+1) + ". " + stocks.get(i).toString());
             for (Transaction t: stocks.get(i).getTransactions()) {

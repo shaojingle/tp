@@ -1,7 +1,6 @@
 package seedu.duke.model;
 
 
-import seedu.duke.Duke;
 import seedu.duke.data.exception.DukeException;
 
 import java.util.ArrayList;
