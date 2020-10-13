@@ -1,7 +1,6 @@
 package seedu.duke.model;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Stock implements Serializable {
@@ -21,6 +20,8 @@ public class Stock implements Serializable {
             break;
         case SELL:
             totalQuantity -= transaction.getQuantity();
+            break;
+        default:
             break;
         }
 
