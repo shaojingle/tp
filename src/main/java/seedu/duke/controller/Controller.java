@@ -2,7 +2,14 @@ package seedu.duke.controller;
 
 import org.patriques.output.timeseries.data.StockData;
 import seedu.duke.api.StockPriceFetcher;
-import seedu.duke.command.*;
+
+import seedu.duke.command.ByeCommand;
+import seedu.duke.command.Command;
+import seedu.duke.command.InvalidCommand;
+import seedu.duke.command.SearchCommand;
+import seedu.duke.command.BuyCommand;
+import seedu.duke.command.SellCommand;
+import seedu.duke.command.ViewCommand;
 import seedu.duke.data.exception.DukeException;
 import seedu.duke.model.PortfolioManager;
 import seedu.duke.parser.Parser;

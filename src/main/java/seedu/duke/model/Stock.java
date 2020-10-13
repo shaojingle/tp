@@ -21,6 +21,8 @@ public class Stock implements Serializable {
         case SELL:
             totalQuantity -= transaction.getQuantity();
             break;
+        default:
+            break;
         }
 
         transactions.add(transaction);

@@ -45,7 +45,7 @@ public class Ui {
             print("You currently have an empty portfolio. Try buying a stock!");
         }
         for (int i = 0; i < stocks.size(); i++) {
-            print((i+1) + ". " + stocks.get(i).toString());
+            print((i + 1) + ". " + stocks.get(i).toString());
             for (Transaction t: stocks.get(i).getTransactions()) {
                 print("\t" + t.toString());
             }
@@ -56,7 +56,7 @@ public class Ui {
     public void printStocks(ArrayList<Stock> stocks) {
         String[] stockNames = new String[stocks.size()];
         for (int i = 0; i < stocks.size(); i++) {
-            stockNames[i] = (i+1) + ". " + stocks.get(i).toString();
+            stockNames[i] = (i + 1) + ". " + stocks.get(i).toString();
         }
         printWithDivider(stockNames);
     }
