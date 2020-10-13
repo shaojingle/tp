@@ -1,5 +1,9 @@
 package seedu.duke.ui;
 
+import seedu.duke.model.Portfolio;
+import seedu.duke.model.Stock;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Ui {
@@ -33,6 +37,13 @@ public class Ui {
         Scanner scan = new Scanner(System.in);
         String userInput = scan.nextLine();
         return userInput;
+    }
+
+    public void viewPortfolio(ArrayList<Stock> stocks) {
+        String[] stockNames
+        for (Stock stock : stocks) {
+            print(stock.toString());
+        }
     }
 
     public void showErrorMessage(String message) {

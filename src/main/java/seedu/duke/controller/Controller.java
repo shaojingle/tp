@@ -9,8 +9,11 @@ import seedu.duke.command.SearchCommand;
 import seedu.duke.data.exception.DukeException;
 import seedu.duke.model.Portfolio;
 import seedu.duke.model.PortfolioManager;
+import seedu.duke.model.Stock;
 import seedu.duke.parser.Parser;
 import seedu.duke.ui.Ui;
+
+import java.time.LocalDateTime;
 
 public class Controller {
     private Ui ui;
@@ -21,6 +24,14 @@ public class Controller {
         ui = new Ui();
         stockPriceFetcher = new StockPriceFetcher();
     }
+
+    private void buyStock(String symbol) throws DukeException {
+        double price = stockPriceFetcher.fetchLatestPrice(symbol);
+        Stock stock = new Stock(symbol, price, LocalDateTime.now());
+        portfolioManager.buyStock(stock);
+    }
+
+    // private void sellStock() {}
 
     public void runApp() {
         ui.greetUser();
