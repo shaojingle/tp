@@ -1,9 +1,10 @@
 package seedu.duke.data;
 
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Stock {
+public class Stock implements Serializable {
     private String symbol;
     private double open;
     private double high;

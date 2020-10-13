@@ -1,8 +1,9 @@
 package seedu.duke.model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Stock {
+public class Stock implements Serializable {
     LocalDateTime purchasedDateTime;
     double purchasedPrice;
 
