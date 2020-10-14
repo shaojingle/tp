@@ -11,7 +11,11 @@ public class Wallet {
         return this.amount;
     }
 
-    public void sellStock(int quantity, double price) { this.amount = this.amount + price * quantity; }
+    public void sellStock(int quantity, double price) {
+        this.amount = this.amount + price * quantity;
+    }
 
-    public void buyStock(int quantity, double price) { this.amount = this.amount - (price * quantity); }
+    public void buyStock(int quantity, double price) {
+        this.amount = this.amount - (price * quantity);
+    }
 }

@@ -53,7 +53,7 @@ public class Ui {
         print(dividerLine);
     }
 
-    public void viewWallet(double amount, double allStocksPrice){
+    public void viewWallet(double amount, double allStocksPrice) {
         print(dividerLine);
         System.out.println("You currently have $" + String.format("%.02f", amount) + " in your wallet.");
         System.out.println("Allocated: $" + String.format("%.02f", allStocksPrice));
