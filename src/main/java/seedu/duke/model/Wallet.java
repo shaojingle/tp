@@ -7,7 +7,7 @@ public class Wallet {
         amount = 10000.00;
     }
 
-    public double getAmount(){
+    public double getAmount() {
         return this.amount;
     }
 

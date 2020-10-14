@@ -39,8 +39,8 @@ public class Controller {
 
             ui.printWithDivider("You have successfully purchased "
                     + quantity + " of " + symbol + " at " + price + ".");
-            ui.printWithDivider("You currently have $" +
-                    String.format("%.02f", wallet.getAmount()) + " in your wallet.");
+            ui.printWithDivider("You currently have $"
+                    + String.format("%.02f", wallet.getAmount()) + " in your wallet.");
         } catch (DukeException e) {
             ui.printWithDivider(e.getMessage());
         }
@@ -54,8 +54,8 @@ public class Controller {
 
             ui.printWithDivider("You have successfully sold "
                     + quantity + " of " + symbol + " at " + price + ".");
-            ui.printWithDivider("You currently have $" +
-                    String.format("%.02f", wallet.getAmount()) + " in your wallet.");
+            ui.printWithDivider("You currently have $"
+                    + String.format("%.02f", wallet.getAmount()) + " in your wallet.");
         } catch (DukeException e) {
             ui.printWithDivider(e.getMessage());
         }
@@ -97,7 +97,7 @@ public class Controller {
 
     public void viewWallet() {
         double amount = 0.00;
-        for (Stock stock: portfolioManager.getAllStocks()){
+        for (Stock stock: portfolioManager.getAllStocks()) {
             try {
                 amount += (stockPriceFetcher.fetchLatestPrice(stock.getSymbol())) * stock.getTotalQuantity();
             } catch (DukeException e) {
