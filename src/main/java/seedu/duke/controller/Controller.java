@@ -39,7 +39,8 @@ public class Controller {
 
             ui.printWithDivider("You have successfully purchased "
                     + quantity + " of " + symbol + " at " + price + ".");
-            ui.printWithDivider("You currently have $" + String.format("%.02f", wallet.getAmount()) + " in your wallet.");
+            ui.printWithDivider("You currently have $" +
+                    String.format("%.02f", wallet.getAmount()) + " in your wallet.");
         } catch (DukeException e) {
             ui.printWithDivider(e.getMessage());
         }
@@ -53,7 +54,8 @@ public class Controller {
 
             ui.printWithDivider("You have successfully sold "
                     + quantity + " of " + symbol + " at " + price + ".");
-            ui.printWithDivider("You currently have $" + String.format("%.02f", wallet.getAmount()) + " in your wallet.");
+            ui.printWithDivider("You currently have $" +
+                    String.format("%.02f", wallet.getAmount()) + " in your wallet.");
         } catch (DukeException e) {
             ui.printWithDivider(e.getMessage());
         }

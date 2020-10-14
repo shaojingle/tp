@@ -41,7 +41,7 @@ public class Parser {
         case "view":
             return new ViewCommand();
         case "wallet":
-                return new WalletCommand();
+            return new WalletCommand();
         default:
             return new InvalidCommand("Invalid command! Please try again.");
         }
